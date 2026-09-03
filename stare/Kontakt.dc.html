@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #FBF8F1; }
+  * { -webkit-font-smoothing: antialiased; }
+  a { color: #B06B3F; text-decoration: none; border-bottom: 1px solid rgba(176,107,63,.45); }
+  a:hover { color: #31463F; border-bottom-color: #31463F; }
+  input::placeholder, textarea::placeholder { color: rgba(43,36,28,.44); }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-10px) rotate(-4deg); } }
+  @keyframes ripple { 0% { transform: scale(.6); opacity: .55; } 100% { transform: scale(1.9); opacity: 0; } }
+</style>
+</helmet>
+
+<section style="position:relative;overflow:hidden;background:#FBF8F1;padding:80px 40px 100px;box-sizing:border-box">
+  <div style="max-width:1180px;margin:0 auto">
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px">
+      <i style="display:block;width:22px;height:2px;background:#B06B3F"></i>
+      <div style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#B06B3F">Kontakt · rezerwacje</div>
+      <i style="display:block;width:22px;height:2px;background:#B06B3F"></i>
+    </div>
+    <h2 style="margin:0 0 14px;text-align:center;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:.02em;color:#31463F">Napisz do nas</h2>
+    <p style="margin:0 auto 54px;max-width:580px;text-align:center;font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.62;color:rgba(43,36,28,.72);text-wrap:pretty">Napisz, na kiedy i dla ilu osób — dobierzemy trasę, kajaki i godzinę wodowania. Odpowiadamy zwykle tego samego dnia.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px;align-items:start">
+
+      <div style="position:relative">
+        <div style="position:relative;background:#4A5B3C;border-radius:26px;padding:34px 32px 36px;box-shadow:0 18px 44px rgba(43,36,28,.13)">
+
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <div style="min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px">
+              <div style="position:relative;width:64px;height:64px;display:flex;align-items:center;justify-content:center">
+                <span style="position:absolute;inset:0;border-radius:50%;background:#E4A76F;animation:ripple 2.2s ease-out infinite"></span>
+                <span style="position:relative;width:64px;height:64px;border-radius:50%;background:#E4A76F;display:flex;align-items:center;justify-content:center;font-family:Fraunces,Georgia,serif;font-size:30px;color:#31463F">✓</span>
+              </div>
+              <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:26px;line-height:1.2;color:#FBF8F1">Wiadomość popłynęła</h3>
+              <p style="margin:0;max-width:280px;font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.6;color:rgba(251,248,241,.78);text-wrap:pretty">Odezwiemy się na podany adres albo telefon — zwykle tego samego dnia.</p>
+              <button type="button" onClick="{{ reset }}" style="margin-top:6px;border:0;cursor:pointer;background:transparent;font-family:'Work Sans',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#E4A76F;border-bottom:1px solid rgba(228,167,111,.5);padding-bottom:3px" style-hover="color:#FBF8F1;border-bottom-color:#FBF8F1">Wyślij kolejną</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:14px">
+
+              <input type="text" name="imie" placeholder="Imię:" required="required" style="width:100%;box-sizing:border-box;border:0;outline:0;background:#EDE7D9;border-radius:12px;padding:15px 18px;font-family:'Work Sans',sans-serif;font-size:15px;color:#2B241C;box-shadow:inset 0 0 0 1.5px rgba(251,248,241,0);transition:box-shadow .18s ease,background .18s ease" style-focus="background:#FBF8F1;box-shadow:inset 0 0 0 1.5px #E4A76F">
+
+              <input type="text" name="nazwisko" placeholder="Nazwisko:" style="width:100%;box-sizing:border-box;border:0;outline:0;background:#EDE7D9;border-radius:12px;padding:15px 18px;font-family:'Work Sans',sans-serif;font-size:15px;color:#2B241C;box-shadow:inset 0 0 0 1.5px rgba(251,248,241,0);transition:box-shadow .18s ease,background .18s ease" style-focus="background:#FBF8F1;box-shadow:inset 0 0 0 1.5px #E4A76F">
+
+              <input type="email" name="email" placeholder="Adres e-mail:" required="required" style="width:86%;box-sizing:border-box;border:0;outline:0;background:#EDE7D9;border-radius:12px;padding:15px 18px;font-family:'Work Sans',sans-serif;font-size:15px;color:#2B241C;box-shadow:inset 0 0 0 1.5px rgba(251,248,241,0);transition:box-shadow .18s ease,background .18s ease" style-focus="background:#FBF8F1;box-shadow:inset 0 0 0 1.5px #E4A76F">
+
+              <div style="display:flex;align-items:center;gap:16px">
+              <input type="tel" name="telefon" placeholder="Nr telefonu:" style="flex:1 1 62%;min-width:0;box-sizing:border-box;border:0;outline:0;background:#EDE7D9;border-radius:12px;padding:15px 18px;font-family:'Work Sans',sans-serif;font-size:15px;color:#2B241C;box-shadow:inset 0 0 0 1.5px rgba(251,248,241,0);transition:box-shadow .18s ease,background .18s ease" style-focus="background:#FBF8F1;box-shadow:inset 0 0 0 1.5px #E4A76F">
+                <img src="assets/kayak-light.svg" alt="" style="flex:0 1 auto;min-width:0;width:100px;max-width:28%;height:auto;opacity:.9;animation:bob 6s ease-in-out infinite;pointer-events:none">
+              </div>
+
+              <textarea name="wiadomosc" rows="6" placeholder="Wiadomość:" required="required" style="width:100%;box-sizing:border-box;border:0;outline:0;resize:vertical;background:#EDE7D9;border-radius:14px;padding:16px 18px;min-height:150px;font-family:'Work Sans',sans-serif;font-size:15px;line-height:1.55;color:#2B241C;box-shadow:inset 0 0 0 1.5px rgba(251,248,241,0);transition:box-shadow .18s ease,background .18s ease" style-focus="background:#FBF8F1;box-shadow:inset 0 0 0 1.5px #E4A76F"></textarea>
+
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:6px">
+                <button type="submit" style="border:0;cursor:pointer;background:#B06B3F;color:#FBF8F1;border-radius:999px;padding:15px 30px;font-family:'Work Sans',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;transition:transform .18s ease,background .18s ease" style-hover="background:#E4A76F;color:#31463F;transform:translateY(-2px)">Wyślij wiadomość →</button>
+                <span style="font-family:'Work Sans',sans-serif;font-size:12.5px;line-height:1.5;color:rgba(251,248,241,.6)">Bez zobowiązań — najpierw ustalamy termin.</span>
+              </div>
+
+            </form>
+          </sc-if>
+
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:26px">
+
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+            <i style="display:block;width:18px;height:2px;background:#B06B3F"></i>
+            <div style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#B06B3F">Dane kontaktowe</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding:15px 0;border-bottom:1px solid rgba(43,36,28,.13)">
+              <span style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(43,36,28,.5)">Telefon</span>
+              <a href="tel:+48665803548" style="font-family:Fraunces,Georgia,serif;font-weight:500;font-size:22px;line-height:1.2;color:#31463F;border-bottom:1px solid rgba(49,70,63,.25)" style-hover="color:#B06B3F;border-bottom-color:#B06B3F">665 803 548</a>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding:15px 0;border-bottom:1px solid rgba(43,36,28,.13)">
+              <span style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(43,36,28,.5)">E-mail</span>
+              <a href="mailto:kontakt@splywajmalpa.pl" style="font-family:Fraunces,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;color:#31463F;border-bottom:1px solid rgba(49,70,63,.25)" style-hover="color:#B06B3F;border-bottom-color:#B06B3F">kontakt@splywajmalpa.pl</a>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding:15px 0;border-bottom:1px solid rgba(43,36,28,.13)">
+              <span style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(43,36,28,.5)">Przystań</span>
+              <span style="text-align:right;font-family:'Work Sans',sans-serif;font-size:15px;line-height:1.5;color:#2B241C">Krakowskie Przedmieście 5<br>22-375 Tarnogóra, nad Wieprzem</span>
+            </div>
+            <sc-if value="{{ showHours }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding:15px 0;border-bottom:1px solid rgba(43,36,28,.13)">
+                <span style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(43,36,28,.5)">Sezon</span>
+                <span style="text-align:right;font-family:'Work Sans',sans-serif;font-size:15px;line-height:1.5;color:#2B241C">maj – wrzesień, codziennie 8:00–20:00</span>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+
+        <sc-if value="{{ showSocial }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a href="https://facebook.com" style="display:flex;align-items:center;gap:9px;border-bottom:0;background:#31463F;color:#FBF8F1;border-radius:999px;padding:13px 20px;font-family:'Work Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:background .18s ease,transform .18s ease" style-hover="background:#B06B3F;color:#FBF8F1;transform:translateY(-2px)">Facebook</a>
+            <a href="https://instagram.com" style="display:flex;align-items:center;gap:9px;border-bottom:0;background:transparent;color:#31463F;border-radius:999px;padding:13px 20px;box-shadow:inset 0 0 0 1.5px rgba(49,70,63,.3);font-family:'Work Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:box-shadow .18s ease,transform .18s ease" style-hover="box-shadow:inset 0 0 0 1.5px #B06B3F;color:#B06B3F;transform:translateY(-2px)">Instagram</a>
+            <a href="Mapa tras.html" style="display:flex;align-items:center;gap:9px;border-bottom:0;background:transparent;color:#31463F;border-radius:999px;padding:13px 20px;box-shadow:inset 0 0 0 1.5px rgba(49,70,63,.3);font-family:'Work Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:box-shadow .18s ease,transform .18s ease" style-hover="box-shadow:inset 0 0 0 1.5px #B06B3F;color:#B06B3F;transform:translateY(-2px)">Mapa tras</a>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showNote }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:18px;background:#EDE7D9;border-radius:20px;padding:20px 24px">
+            <img src="assets/monkey.svg" alt="" style="width:76px;flex:0 0 auto">
+            <div>
+              <div style="font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:19px;line-height:1.25;color:#31463F;margin-bottom:6px">Wolisz zadzwonić?</div>
+              <p style="margin:0;font-family:'Work Sans',sans-serif;font-size:14px;line-height:1.55;color:rgba(43,36,28,.7);text-wrap:pretty">Odbieramy między 8:00 a 20:00. W sezonie czasem z wody — wtedy oddzwaniamy.</p>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showHours&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;},&quot;showSocial&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;},&quot;showNote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      showHours: this.props.showHours ?? true,
+      showSocial: this.props.showSocial ?? true,
+      showNote: this.props.showNote ?? true,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

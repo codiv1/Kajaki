@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spływaj Małpa Wieprzem — mobilna wypożyczalnia kajaków, Tarnogóra</title>
+<meta name="description" content="Mobilna wypożyczalnia kajaków na rzece Wieprz. Trasy od 9 do 26 km, dowóz na start i odbiór z mety w cenie. Przystań w Tarnogórze.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/podstawa.css">
+<link rel="stylesheet" href="css/nawigacja.css">
+<link rel="stylesheet" href="css/sekcje.css">
+</head>
+<body>
+
+<a class="pomin-nawigacje" href="#start">Przejdź do treści</a>
+
+<!-- ============================ NAWIGACJA ============================ -->
+<header class="naglowek" id="naglowek">
+  <div class="naglowek__wnetrze">
+
+    <a class="marka" href="#start">
+      Spływaj Małpa Wieprzem
+      <span>Mobilna wypożyczalnia kajaków · Wieprz</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Nawigacja główna">
+      <a href="#o-nas">O nas</a>
+      <a href="#trasy">Trasy</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="menu__telefon" href="tel:+48665803548">665 803 548</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" type="button"
+            aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="start">
+  <div class="hero__tlo"></div>
+  <div class="hero__mgla"></div>
+
+  <div class="hero__tresc">
+    <p class="hero__nadtytul">Nielisz · Izbica · Krasnystaw</p>
+    <h1 class="hero__tytul">Wsiądź w kajak tam, gdzie Wieprz najpiękniej się wije</h1>
+    <p class="hero__opis">Mobilna wypożyczalnia z przystanią w Tarnogórze. Wybierasz trasę, my dowozimy kajaki na start i odbieramy z mety — w cenie spływu.</p>
+    <div class="hero__przyciski">
+      <a href="#kontakt" class="przycisk przycisk--pelny">Zarezerwuj spływ</a>
+      <a href="#trasy" class="przycisk przycisk--obrys">Zobacz trasy</a>
+    </div>
+  </div>
+
+  <div class="hero__fakt">
+    <span class="hero__kropka"></span>
+    Rzeka Wieprz — ok. 300 km szlaku kajakowego przez Roztocze i Lubelszczyznę
+  </div>
+</section>
+
+<!-- ============================ O NAS ============================ -->
+<section class="onas" id="o-nas">
+
+  <div class="onas__naglowek odslon">
+    <div class="etykieta"><i></i><span>Kim jesteśmy</span></div>
+    <h2>O nas <em>na Wieprzu</em></h2>
+  </div>
+
+  <div class="waz">
+
+    <div class="rzad rzad--1">
+      <a class="malpa" href="https://www.facebook.com/profile.php?id=100089779070248"
+         target="_blank" rel="noopener noreferrer" aria-label="Odwiedź nas na Facebooku">
+        <span class="malpa__obraz"></span>
+        <span class="malpa__tabliczka">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </span>
+      </a>
+
+      <div class="kajak kajak--g1"></div>
+      <div class="kajak kajak--g2"></div>
+
+      <div class="zdjecie">Zdjęcie 1 — przystań w Tarnogórze</div>
+      <div class="tekst">
+        <h3>Rodzinna wypożyczalnia nad samą wodą</h3>
+        <p>Mieszkamy w Tarnogórze i pływamy po Wieprzu od dziecka. Znamy każdy zakręt, każdą przenoskę i każde miejsce, w którym warto zrobić przerwę na kanapkę.</p>
+      </div>
+    </div>
+
+    <div class="rzad rzad--2">
+      <div class="kajak kajak--d1"></div>
+      <div class="kajak kajak--d2"></div>
+
+      <div class="zdjecie">Zdjęcie 2 — transport kajaków</div>
+      <div class="tekst">
+        <h3>Mobilnie — przyjeżdżamy tam, gdzie chcesz zacząć</h3>
+        <p>Dowozimy kajaki na miejsce startu i odbieramy z mety. Bez kombinowania z drugim samochodem, bez wracania po auto po siedmiu godzinach na wodzie.</p>
+      </div>
+    </div>
+
+    <div class="rzad rzad--3">
+      <div class="kajak kajak--d1"></div>
+      <div class="kajak kajak--d2"></div>
+
+      <div class="zdjecie">Zdjęcie 3 — altana i ognisko</div>
+      <div class="tekst">
+        <h3>Meta z ogniskiem, altaną i siatkówką</h3>
+        <p>Nasza przystań to nie tylko miejsce na oddanie kajaka. Zostań na ognisko, rozstaw namiot, zagraj w siatkówkę plażową — wieczór nad Wieprzem jest częścią wyprawy.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ TRASY + MAPA ============================ -->
+<section class="trasy" id="trasy">
+  <div class="kontener">
+
+    <div class="etykieta etykieta--srodek odslon"><i></i><span>Wieprz · Roztocze Zachodnie</span><i></i></div>
+    <h2 class="tytul-sekcji odslon">Nasze trasy spływów</h2>
+    <p class="lead odslon">Cztery odcinki meandrującego Wieprza — od krótkiego popołudnia po całodniową wyprawę. Najedź na trasę, żeby zobaczyć ją na mapie.</p>
+
+    <div class="trasy__uklad">
+      <div class="trasy__lista">
+        <div class="grupa">
+          <div class="grupa__naglowek"><b>Trasy krótkie</b><i></i></div>
+          <div class="karty" id="trasy-krotkie"></div>
+        </div>
+        <div class="grupa">
+          <div class="grupa__naglowek"><b>Trasy długie · całodniowe</b><i></i></div>
+          <div class="karty" id="trasy-dlugie"></div>
+        </div>
+        <p class="trasy__stopka">Wszystkie trasy zaczynają się lub kończą przy naszej przystani w Tarnogórze. Transport kajaków po stronie wypożyczalni.</p>
+      </div>
+
+      <div class="trasy__mapa-kolumna">
+        <div class="mapa-ramka">
+          <div id="mapa"></div>
+          <div class="mapa-podpowiedz" id="mapa-podpowiedz">Najedź na trasę z listy obok</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ CENNIK ============================ -->
+<section class="cennik" id="cennik">
+  <div class="kontener kontener--waski">
+
+    <div class="etykieta etykieta--srodek odslon"><i></i><span>Wieprz · Tarnogóra</span><i></i></div>
+    <h2 class="tytul-sekcji odslon">Cennik</h2>
+    <p class="lead odslon">Ceny podane za kajak, za cały spływ — dowóz na start i odbiór z mety wliczone.</p>
+
+    <div class="grupa__naglowek odslon"><b>Trasy krótkie</b><i></i></div>
+    <div class="cennik__siatka">
+
+      <article class="cena odslon">
+        <div class="cena__gora">
+          <div class="cena__numer">Trasa krótka 01</div>
+          <h3>Tarnogóra → Dworzyska</h3>
+          <div class="cena__znaczniki"><em>9 km</em><em>ok. 2–2,5 h</em></div>
+        </div>
+        <div class="cena__dol">
+          <p>Start obok naszej przystani kajakowej.</p>
+          <dl class="cena__tabela">
+            <div><dt>Kajak 1-osobowy</dt><dd>80 zł</dd></div>
+            <div><dt>Kajak 2-osobowy</dt><dd>100 zł</dd></div>
+            <div><dt>Kajak 3-osobowy</dt><dd>120 zł</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="cena cena--wyrozniona odslon">
+        <div class="cena__gora">
+          <div class="cena__numer-wiersz">
+            <div class="cena__numer">Trasa krótka 02</div>
+            <div class="cena__plakietka">★ Nasza ulubiona</div>
+          </div>
+          <h3>Wirkowice → Tarnogóra</h3>
+          <div class="cena__znaczniki"><em>12 km</em><em>ok. 3–3,5 h</em></div>
+        </div>
+        <div class="cena__dol">
+          <p>Finisz przy naszej przystani — altana, ognisko, siatkówka plażowa. Spokojne, rekreacyjne spływanie.</p>
+          <dl class="cena__tabela">
+            <div><dt>Kajak 1-osobowy</dt><dd>80 zł</dd></div>
+            <div><dt>Kajak 2-osobowy</dt><dd>100 zł</dd></div>
+            <div><dt>Kajak 3-osobowy</dt><dd>120 zł</dd></div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="grupa__naglowek odslon"><b>Trasy długie · całodniowe</b><i></i></div>
+    <div class="cennik__siatka">
+
+      <article class="cena odslon">
+        <div class="cena__gora">
+          <div class="cena__numer">Trasa długa 01</div>
+          <h3>Nielisz → Tarnogóra</h3>
+          <div class="cena__znaczniki"><em>23 km</em><em>ok. 6 h</em></div>
+        </div>
+        <div class="cena__dol">
+          <p>Finisz przy naszej przystani kajakowej.</p>
+          <dl class="cena__tabela">
+            <div><dt>Kajak 1-osobowy</dt><dd>100 zł</dd></div>
+            <div><dt>Kajak 2-osobowy</dt><dd>120 zł</dd></div>
+            <div><dt>Kajak 3-osobowy</dt><dd>120 zł</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="cena odslon">
+        <div class="cena__gora">
+          <div class="cena__numer">Trasa długa 02</div>
+          <h3>Tarnogóra → Krasnystaw</h3>
+          <div class="cena__znaczniki"><em>26 km</em><em>ok. 7 h</em></div>
+        </div>
+        <div class="cena__dol">
+          <p>Start obok naszej przystani kajakowej, przez Izbicki Przełom Wieprza.</p>
+          <dl class="cena__tabela">
+            <div><dt>Kajak 1-osobowy</dt><dd>100 zł</dd></div>
+            <div><dt>Kajak 2-osobowy</dt><dd>120 zł</dd></div>
+            <div><dt>Kajak 3-osobowy</dt><dd>120 zł</dd></div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="notka odslon">
+      <b>Spływy kilkudniowe</b>
+      <span>Ceny jak za trasę długą (całodniową) — naliczane za dobę.</span>
+    </div>
+
+    <div class="transport odslon">
+      <div class="transport__tekst">
+        <h3>Dowóz na miejsce spływu i odbiór — w cenie</h3>
+        <p>Dowozimy Państwa na miejsce rozpoczęcia spływu oraz odbieramy z miejsca jego zakończenia.</p>
+      </div>
+      <div class="transport__plakietka">0 zł dopłaty</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ GALERIA ============================ -->
+<section class="galeria" id="galeria">
+  <div class="kontener">
+
+    <div class="etykieta etykieta--srodek odslon"><i></i><span>Wieprz · sezon nad rzeką</span><i></i></div>
+    <h2 class="tytul-sekcji odslon">Galeria</h2>
+    <p class="lead odslon">Meandry, mgła nad wodą, ognisko na przystani i ludzie, którzy wrócili po raz kolejny. Kilkadziesiąt kadrów z naszych spływów.</p>
+
+    <div class="mozaika">
+
+      <figure class="kadr kadr--duzy"><figcaption>Kadr otwierający — kajaki na Wieprzu</figcaption></figure>
+      <figure class="kadr"><figcaption>Poranna mgła nad rzeką</figcaption></figure>
+      <figure class="kadr kadr--pion"><figcaption>Wysoka skarpa, Izbicki Przełom</figcaption></figure>
+      <figure class="kadr"><figcaption>Wodowanie przy młynie</figcaption></figure>
+      <figure class="kadr kadr--szeroki"><figcaption>Grupa na wodzie — szeroki kadr</figcaption></figure>
+      <figure class="kadr"><figcaption>Wiosło i odbicie w wodzie</figcaption></figure>
+      <figure class="kadr"><figcaption>Dzieciaki w kamizelkach</figcaption></figure>
+
+      <blockquote class="kafel kafel--cytat">
+        <div class="etykieta"><i></i><span>Z księgi gości</span></div>
+        <p>„Dwanaście kilometrów ciszy, czapli i zakrętów. Wracamy za rok."</p>
+      </blockquote>
+
+      <figure class="kadr"><figcaption>Przystań w Tarnogórze</figcaption></figure>
+      <figure class="kadr kadr--pion"><figcaption>Pałac i park od strony rzeki</figcaption></figure>
+      <figure class="kadr kadr--duzy"><figcaption>Ognisko i altana po spływie</figcaption></figure>
+      <figure class="kadr"><figcaption>Kajaki na przyczepie</figcaption></figure>
+      <figure class="kadr"><figcaption>Czapla siwa nad Wieprzem</figcaption></figure>
+      <figure class="kadr"><figcaption>Przenoska przy jazie</figcaption></figure>
+      <figure class="kadr kadr--szeroki"><figcaption>Zachód słońca na finiszu — panorama</figcaption></figure>
+      <figure class="kadr kadr--pion"><figcaption>Portret pionowy — uśmiech na wodzie</figcaption></figure>
+      <figure class="kadr"><figcaption>Siatkówka plażowa</figcaption></figure>
+      <figure class="kadr"><figcaption>Detal — mokre wiosło i deska</figcaption></figure>
+      <figure class="kadr kadr--duzy"><figcaption>Całodniowy spływ Nielisz → Tarnogóra</figcaption></figure>
+      <figure class="kadr"><figcaption>Piknik na brzegu</figcaption></figure>
+      <figure class="kadr"><figcaption>Małpa na dziobie kajaka</figcaption></figure>
+      <figure class="kadr"><figcaption>Krasnystaw — koniec trasy</figcaption></figure>
+      <figure class="kadr kadr--szeroki"><figcaption>Flota kajaków na brzegu — szeroki kadr</figcaption></figure>
+      <figure class="kadr"><figcaption>Deszczowy spływ</figcaption></figure>
+      <figure class="kadr kadr--pion"><figcaption>Pionowy kadr — meander z góry</figcaption></figure>
+      <figure class="kadr"><figcaption>Ekipa przed wyruszeniem</figcaption></figure>
+      <figure class="kadr"><figcaption>Nocleg pod namiotem</figcaption></figure>
+
+      <div class="kafel kafel--cta">
+        <h3>Masz swoje zdjęcie z Wieprza?</h3>
+        <p>Oznacz nas na Facebooku — najlepsze kadry lądują w tej galerii.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ KONTAKT ============================ -->
+<section class="kontakt" id="kontakt">
+  <div class="kontener">
+
+    <div class="etykieta etykieta--srodek odslon"><i></i><span>Kontakt · rezerwacje</span><i></i></div>
+    <h2 class="tytul-sekcji odslon">Napisz do nas</h2>
+    <p class="lead odslon">Napisz, na kiedy i dla ilu osób — dobierzemy trasę, kajaki i godzinę wodowania. Odpowiadamy zwykle tego samego dnia.</p>
+
+    <div class="kontakt__uklad">
+
+      <div class="formularz-panel odslon">
+
+        <form class="formularz" id="formularz" novalidate>
+          <input type="text" name="imie" placeholder="Imię:" required autocomplete="given-name">
+          <input type="text" name="nazwisko" placeholder="Nazwisko:" autocomplete="family-name">
+          <input type="email" name="email" placeholder="Adres e-mail:" required autocomplete="email">
+
+          <div class="formularz__wiersz">
+            <input type="tel" name="telefon" placeholder="Nr telefonu:" autocomplete="tel">
+            <img src="assets/kajak.svg" alt="" class="formularz__kajak">
+          </div>
+
+          <textarea name="wiadomosc" rows="6" placeholder="Wiadomość:" required></textarea>
+
+          <div class="formularz__dol">
+            <button type="submit" class="przycisk przycisk--pelny">Wyślij wiadomość →</button>
+            <span>Bez zobowiązań — najpierw ustalamy termin.</span>
+          </div>
+        </form>
+
+        <div class="wyslano" id="wyslano" tabindex="-1" hidden>
+          <div class="wyslano__znak"><span class="wyslano__fala"></span><span class="wyslano__ptaszek">✓</span></div>
+          <h3>Wiadomość popłynęła</h3>
+          <p>Odezwiemy się na podany adres albo telefon — zwykle tego samego dnia.</p>
+          <button type="button" class="wyslano__reset" id="wyslano-reset">Wyślij kolejną</button>
+        </div>
+
+      </div>
+
+      <div class="kontakt__dane odslon">
+
+        <div>
+          <div class="etykieta"><i></i><span>Dane kontaktowe</span></div>
+          <dl class="dane">
+            <div><dt>Telefon</dt><dd><a class="dane__mocne" href="tel:+48665803548">665 803 548</a></dd></div>
+            <div><dt>E-mail</dt><dd><a class="dane__mocne" href="mailto:kontakt@splywajmalpa.pl">kontakt@splywajmalpa.pl</a></dd></div>
+            <div><dt>Przystań</dt><dd>Krakowskie Przedmieście 5<br>22-375 Tarnogóra, nad Wieprzem</dd></div>
+            <div><dt>Sezon</dt><dd>maj – wrzesień, codziennie 8:00–20:00</dd></div>
+          </dl>
+        </div>
+
+        <div class="kontakt__linki">
+          <a class="pigulka pigulka--pelna" href="https://www.facebook.com/profile.php?id=100089779070248" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a class="pigulka" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="pigulka" href="#trasy">Mapa tras</a>
+        </div>
+
+        <div class="kontakt__notka">
+          <img src="assets/malpa.svg" alt="">
+          <div>
+            <div class="kontakt__notka-tytul">Wolisz zadzwonić?</div>
+            <p>Odbieramy między 8:00 a 20:00. W sezonie czasem z wody — wtedy oddzwaniamy.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ STOPKA ============================ -->
+<footer class="stopka">
+  <div class="kontener stopka__wnetrze">
+    <div class="stopka__marka">
+      Spływaj Małpa Wieprzem
+      <span>Mobilna wypożyczalnia kajaków · Tarnogóra nad Wieprzem</span>
+    </div>
+    <nav class="stopka__menu" aria-label="Nawigacja w stopce">
+      <a href="#o-nas">O nas</a>
+      <a href="#trasy">Trasy</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="stopka__kontakt">
+      <a href="tel:+48665803548">665 803 548</a>
+      <a href="mailto:kontakt@splywajmalpa.pl">kontakt@splywajmalpa.pl</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script src="js/dane-tras.js"></script>
+<script src="js/nawigacja.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/formularz.js"></script>
+</body>
+</html>

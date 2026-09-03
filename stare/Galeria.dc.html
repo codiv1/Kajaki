@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #FBF8F1; }
+  * { -webkit-font-smoothing: antialiased; }
+  a { color: #B06B3F; text-decoration: none; border-bottom: 1px solid rgba(176,107,63,.45); }
+  a:hover { color: #31463F; border-bottom-color: #31463F; }
+</style>
+</helmet>
+
+<section style="background:#FBF8F1;padding:80px 40px 100px;box-sizing:border-box">
+  <div style="max-width:1240px;margin:0 auto">
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px">
+      <i style="display:block;width:22px;height:2px;background:#B06B3F"></i>
+      <div style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#B06B3F">Wieprz · sezon nad rzeką</div>
+      <i style="display:block;width:22px;height:2px;background:#B06B3F"></i>
+    </div>
+    <h2 style="margin:0 0 14px;text-align:center;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:.02em;color:#31463F">Galeria</h2>
+    <sc-if value="{{ showIntro }}" hint-placeholder-val="{{ true }}">
+      <p style="margin:0 auto 52px;max-width:600px;text-align:center;font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.62;color:rgba(43,36,28,.72);text-wrap:pretty">Meandry, mgła nad wodą, ognisko na przystani i ludzie, którzy wrócili po raz kolejny. Kilkadziesiąt kadrów z naszych spływów.</p>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(calc(50% - 8px),230px),1fr));grid-auto-columns:minmax(0,1fr);grid-auto-rows:clamp(132px,15vw,192px);grid-auto-flow:dense;gap:16px">
+
+      <div style="grid-column:span 2;grid-row:span 2;position:relative">
+        <image-slot id="gal-01" shape="rect" mask="polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px)" placeholder="Kadr otwierający — kajaki na Wieprzu"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-02" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Poranna mgła nad rzeką"></image-slot>
+      </div>
+
+      <div style="grid-row:span 2;position:relative">
+        <image-slot id="gal-03" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Wysoka skarpa, Izbicki Przełom"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-04" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Wodowanie przy młynie"></image-slot>
+      </div>
+
+      <div style="grid-column:span 2;position:relative">
+        <image-slot id="gal-05" shape="rect" mask="polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)" placeholder="Grupa na wodzie — szeroki kadr"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-06" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Wiosło i odbicie w wodzie"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-07" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Dzieciaki w kamizelkach"></image-slot>
+      </div>
+
+      <sc-if value="{{ showQuote }}" hint-placeholder-val="{{ true }}">
+        <div style="grid-column:span 2;background:#31463F;padding:26px 30px;display:flex;flex-direction:column;justify-content:center;clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <i style="display:block;width:18px;height:2px;background:#E4A76F"></i>
+            <div style="font-family:'Work Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#E4A76F">Z księgi gości</div>
+          </div>
+          <p style="margin:0;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(18px,2vw,23px);line-height:1.3;color:#FBF8F1;text-wrap:pretty">„Dwanaście kilometrów ciszy, czapli i zakrętów. Wracamy za rok."</p>
+        </div>
+      </sc-if>
+
+      <div style="position:relative">
+        <image-slot id="gal-08" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Przystań w Tarnogórze"></image-slot>
+      </div>
+
+      <div style="grid-row:span 2;position:relative">
+        <image-slot id="gal-09" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Pałac i park od strony rzeki"></image-slot>
+      </div>
+
+      <div style="grid-column:span 2;grid-row:span 2;position:relative">
+        <image-slot id="gal-10" shape="rect" mask="polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px)" placeholder="Ognisko i altana po spływie"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-11" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Kajaki na przyczepie"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-12" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Czapla siwa nad Wieprzem"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-13" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Przenoska przy jazie"></image-slot>
+      </div>
+
+      <div style="grid-column:span 2;position:relative">
+        <image-slot id="gal-14" shape="rect" mask="polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)" placeholder="Zachód słońca na finiszu — panorama"></image-slot>
+      </div>
+
+      <div style="grid-row:span 2;position:relative">
+        <image-slot id="gal-15" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Portret pionowy — uśmiech na wodzie"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-16" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Siatkówka plażowa"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-17" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Detal — mokre wiosło i deska"></image-slot>
+      </div>
+
+      <div style="grid-column:span 2;grid-row:span 2;position:relative">
+        <image-slot id="gal-18" shape="rect" mask="polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px)" placeholder="Całodniowy spływ Nielisz → Tarnogóra"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-19" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Piknik na brzegu"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-20" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Małpa na dziobie kajaka"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-21" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Krasnystaw — koniec trasy"></image-slot>
+      </div>
+
+      <div style="grid-column:span 2;position:relative">
+        <image-slot id="gal-22" shape="rect" mask="polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)" placeholder="Flota kajaków na brzegu — szeroki kadr"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-23" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Deszczowy spływ"></image-slot>
+      </div>
+
+      <div style="grid-row:span 2;position:relative">
+        <image-slot id="gal-24" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Pionowy kadr — meander z góry"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-25" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Ekipa przed wyruszeniem"></image-slot>
+      </div>
+
+      <div style="position:relative">
+        <image-slot id="gal-26" shape="rect" mask="polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)" placeholder="Nocleg pod namiotem"></image-slot>
+      </div>
+
+      <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+        <div style="grid-column:span 2;background:#B06B3F;padding:26px 30px;display:flex;flex-direction:column;justify-content:center;clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)">
+          <h3 style="margin:0 0 8px;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(19px,2vw,24px);line-height:1.18;color:#FBF8F1">Masz swoje zdjęcie z Wieprza?</h3>
+          <p style="margin:0;font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.58;color:rgba(251,248,241,.88);text-wrap:pretty">Oznacz nas na Facebooku — najlepsze kadry lądują w tej galerii.</p>
+        </div>
+      </sc-if>
+
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(43,36,28,.14)">
+      <div style="font-family:'Work Sans',sans-serif;font-size:13.5px;line-height:1.6;color:rgba(43,36,28,.62)">Wszystkie zdjęcia z naszych spływów, Tarnogóra nad Wieprzem</div>
+      <div style="font-family:'Work Sans',sans-serif;font-size:13.5px;font-weight:500;line-height:1.6;color:#31463F">Tel. 665 803 548</div>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showIntro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;},&quot;showQuote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;},&quot;showCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zawartość&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showIntro: this.props.showIntro ?? true,
+      showQuote: this.props.showQuote ?? true,
+      showCta: this.props.showCta ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
