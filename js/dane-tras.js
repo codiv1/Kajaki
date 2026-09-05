@@ -19,22 +19,24 @@ const PRZYSTANKI = [
 
 const TRASY = [
   { id:'r1', grupa:'trasy-krotkie', numer:'Trasa krótka 01', nazwa:'Tarnogóra → Dworzyska',
-    od:'tarnogora', do:'dworzyska', km:'9 km', czas:'2–2,5 h',
+    od:'tarnogora', do:'dworzyska', km:'9 km', czas:'2 do 2,5 h',
     opis:'Start tuż obok naszej przystani kajakowej.',
     ceny:[['1-os','80 zł'],['2-os','100 zł'],['3-os','120 zł']] },
 
   { id:'r2', grupa:'trasy-krotkie', numer:'Trasa krótka 02', nazwa:'Wirkowice → Tarnogóra',
-    od:'wirkowice', do:'tarnogora', km:'12 km', czas:'3–3,5 h',
-    opis:'Spokojne, rekreacyjne spływanie — kończy się w naszej przystani.',
+    od:'wirkowice', do:'tarnogora', km:'12 km', czas:'3 do 3,5 h',
+    opis:'Spokojne, rekreacyjne spływanie. Kończy się przy naszej przystani.',
     ceny:[['1-os','80 zł'],['2-os','100 zł'],['3-os','120 zł']] },
 
   { id:'r3', grupa:'trasy-dlugie', numer:'Trasa długa 01', nazwa:'Nielisz → Tarnogóra',
+    /* strona: opcjonalna podstrona trasy — karta staje się wtedy linkiem */
+    strona:'trasa-nielisz-tarnogora.html',
     od:'nielisz', do:'tarnogora', km:'23 km', czas:'ok. 6 h',
     opis:'Całodniowa wyprawa kończąca się przy naszej przystani.',
     ceny:[['1-os','100 zł'],['2-os','120 zł'],['3-os','120 zł']] },
 
   { id:'r4', grupa:'trasy-dlugie', numer:'Trasa długa 02', nazwa:'Tarnogóra → Krasnystaw',
     od:'tarnogora', do:'krasnystaw', km:'26 km', czas:'ok. 7 h',
-    opis:'Najdłuższy odcinek — przez Izbicki Przełom Wieprza.',
+    opis:'Najdłuższy odcinek, przez Izbicki Przełom Wieprza.',
     ceny:[['1-os','100 zł'],['2-os','120 zł'],['3-os','120 zł']] }
 ];

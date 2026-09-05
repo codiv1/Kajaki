@@ -17,9 +17,19 @@
   const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 
   TRASY.forEach(function (t) {
-    const el = document.createElement('button');
-    el.type = 'button';
-    el.className = 'karta';
+    // trasa z własną podstroną = link (klik przenosi na opis trasy),
+    // pozostałe zostają przyciskiem przypinającym odcinek na mapie
+    const maStrone = Boolean(t.strona);
+
+    const el = document.createElement(maStrone ? 'a' : 'button');
+
+    if (maStrone) {
+      el.href = t.strona;
+    } else {
+      el.type = 'button';
+    }
+
+    el.className = 'karta' + (maStrone ? ' karta--link' : '');
     el.dataset.id = t.id;
     el.innerHTML =
       '<div class="numer">' + esc(t.numer) + '</div>' +
@@ -28,7 +38,8 @@
       '<p>' + esc(t.opis) + '</p>' +
       '<div class="ceny">' +
         t.ceny.map(c => '<span>' + esc(c[0]) + ' <b>' + esc(c[1]) + '</b></span>').join('') +
-      '</div>';
+      '</div>' +
+      (maStrone ? '<div class="karta__wiecej">Zobacz trasę <i aria-hidden="true">→</i></div>' : '');
 
     document.getElementById(t.grupa).appendChild(el);
 
@@ -36,7 +47,8 @@
     el.addEventListener('mouseleave', () => podglad(null));
     el.addEventListener('focus', () => podglad(t.id));
     el.addEventListener('blur', () => podglad(null));
-    el.addEventListener('click', () => przypnij(t.id));
+
+    if (!maStrone) el.addEventListener('click', () => przypnij(t.id));
   });
 
   /* ---------------- mapa (inicjalizowana leniwie) ---------------- */

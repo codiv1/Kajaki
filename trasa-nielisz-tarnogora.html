@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nielisz → Tarnogóra · całodniowy spływ Wieprzem | Spływaj Małpa Wieprzem</title>
+<meta name="description" content="Całodniowa trasa kajakowa Nielisz → Tarnogóra: 23 km meandrującego Wieprza, ok. 6 godzin na wodzie. Dowóz kajaków na start i odbiór z mety w cenie spływu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/podstawa.css">
+<link rel="stylesheet" href="css/nawigacja.css">
+<link rel="stylesheet" href="css/podstrona.css">
+</head>
+<body>
+
+<a class="pomin-nawigacje" href="#start">Przejdź do treści</a>
+
+<!-- ============================ NAWIGACJA ============================ -->
+<header class="naglowek" id="naglowek">
+  <div class="naglowek__wnetrze">
+
+    <a class="marka" href="index.html">
+      Spływaj Małpa Wieprzem
+      <span>Mobilna wypożyczalnia kajaków · Wieprz</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Nawigacja główna">
+      <a href="index.html#o-nas">O nas</a>
+      <a href="index.html#trasy">Trasy</a>
+      <a href="index.html#cennik">Cennik</a>
+      <a href="index.html#galeria">Galeria</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a class="menu__telefon" href="tel:+48665803548">665 803 548</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" type="button"
+            aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="start">
+
+<!-- ============================ HERO ============================ -->
+<section class="thero">
+  <div class="thero__tlo"></div>
+  <div class="thero__mgla"></div>
+
+  <div class="thero__tresc">
+    <p class="thero__sciezka">
+      <a href="index.html#trasy">Trasy</a>
+      <span aria-hidden="true">·</span>
+      <span>Trasa długa 01 · rzeka Wieprz</span>
+    </p>
+
+    <h1 class="thero__tytul">Nielisz → Tarnogóra</h1>
+
+    <div class="thero__dol">
+      <p class="thero__lid">najdziksze zakole Wieprza</p>
+      <p class="thero__podpis">Wieprz poniżej Nielisza, czerwcowe popołudnie</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARAMETRY ============================ -->
+<section class="parametry" aria-label="Parametry trasy">
+  <dl class="parametry__lista">
+    <div>
+      <dt>Długość trasy</dt>
+      <dd>23 km</dd>
+    </div>
+    <div>
+      <dt>Czas spływu</dt>
+      <dd>ok. 6 godz.</dd>
+    </div>
+    <div>
+      <dt>Poziom trudności</dt>
+      <dd>łatwy</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============================ WPROWADZENIE ============================ -->
+<section class="tsekcja tsekcja--gora">
+  <div class="tpara tpara--gora odslon">
+    <div class="tpara__tekst">
+      <div class="etykieta"><i></i><span>Wprowadzenie</span></div>
+      <h2>Izbicki Przełom Wieprza</h2>
+      <p>Ten odcinek Wieprza to prawdziwy skarb Lubelszczyzny, fragment doliny objęty ochroną w ramach sieci Natura 2000 jako „Izbicki Przełom Wieprza".</p>
+      <p>Rzeka zachowała tu swój naturalny bieg i meandruje tak intensywnie, że trudno o podobny widok gdziekolwiek indziej w Polsce.</p>
+    </div>
+    <figure class="tobraz">
+      <div class="tobraz__ramka"></div>
+      <figcaption>Zdjęcie: meandry Wieprza z lotu ptaka</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ JAK TU WYGLĄDA ============================ -->
+<section class="tsekcja tsekcja--dol">
+
+  <div class="tsekcja__naglowek odslon">
+    <h2>Jak tu wygląda</h2>
+  </div>
+
+  <div class="tpara odslon">
+    <div class="tpara__tekst">
+      <h3>Koryto i skarpy</h3>
+      <p>Koryto o szerokości od 10 do 15 metrów prowadzi przez szeroką, łąkową dolinę, a miejscami wcina się głęboko w zbocza, tworząc malownicze, strome skarpy nad samą wodą.</p>
+    </div>
+    <figure class="tobraz">
+      <div class="tobraz__ramka"></div>
+      <figcaption>Zdjęcie: strome skarpy nad wąskim korytem</figcaption>
+    </figure>
+  </div>
+
+  <div class="tpara tpara--odwrotny odslon">
+    <figure class="tobraz">
+      <div class="tobraz__ramka"></div>
+      <figcaption>Zdjęcie: podmokłe łąki w dnie doliny</figcaption>
+    </figure>
+    <div class="tpara__tekst">
+      <h3>Łąki i murawy</h3>
+      <p>To krajobraz pełen kontrastów. Podmokłe, ekstensywnie użytkowane łąki w dnie doliny sąsiadują z nasłonecznionymi zboczami porośniętymi murawami kserotermicznymi, czyli roślinnością bardziej kojarzoną ze stepem niż z doliną rzeczną.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================ CO MOŻNA SPOTKAĆ ============================ -->
+<section class="przyroda">
+  <div class="przyroda__wnetrze">
+
+    <div class="przyroda__intro odslon">
+      <h2>Co można spotkać</h2>
+      <p>Płynąc tą trasą, macie realną szansę na spotkanie z dziką przyrodą.</p>
+    </div>
+
+    <ul class="przyroda__lista">
+
+      <li class="odslon">
+        <div class="tobraz tobraz--kwadrat"><div class="tobraz__ramka"></div></div>
+        <div class="przyroda__opis">
+          <h3>Bobry i wydry</h3>
+          <p>W przybrzeżnych zaroślach i starorzeczach żyją bobry i wydry. Jeśli nie uda się zobaczyć ich samych, na pewno zauważycie ślady ich bytności: nadgryzione pnie drzew czy żeremia.</p>
+        </div>
+      </li>
+
+      <li class="odslon">
+        <div class="tobraz tobraz--kwadrat"><div class="tobraz__ramka"></div></div>
+        <div class="przyroda__opis">
+          <h3>Żółw błotny</h3>
+          <p>W spokojnych zakolach i starorzeczach kryje się żółw błotny, jedyny rodzimy gatunek żółwia w Polsce. Jest niezwykle płochliwy, ale to właśnie takie miejsca stanowią jego ostatnie ostoje.</p>
+        </div>
+      </li>
+
+      <li class="odslon">
+        <div class="tobraz tobraz--kwadrat"><div class="tobraz__ramka"></div></div>
+        <div class="przyroda__opis">
+          <h3>Przetacznik zwodny</h3>
+          <p>To właśnie tutaj, i tylko tutaj w całej Polsce, można spotkać przetacznik zwodny, chroniony gatunek wpisany do Polskiej Czerwonej Księgi Roślin.</p>
+        </div>
+      </li>
+
+      <li class="odslon">
+        <div class="tobraz tobraz--kwadrat"><div class="tobraz__ramka"></div></div>
+        <div class="przyroda__opis">
+          <h3>Rzadkie trawy</h3>
+          <p>Rosną tu też rzadkie trawy: strzęplica nadobna i kostrzewa bruzdkowa.</p>
+        </div>
+      </li>
+
+      <li class="odslon">
+        <div class="tobraz tobraz--kwadrat"><div class="tobraz__ramka"></div></div>
+        <div class="przyroda__opis">
+          <h3>Ptactwo wodno-błotne</h3>
+          <p>Nad wodą i łąkami można też obserwować bogate ptactwo wodno-błotne.</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ BEZPIECZEŃSTWO / TERMIN ============================ -->
+<section class="tsekcja">
+  <div class="tnotki">
+
+    <div class="tblok odslon">
+      <h2>Bezpieczeństwo</h2>
+      <p>Trasa jest spokojna i bezpieczna. Nie ma tu żadnych przeszkód hydrotechnicznych, jazów ani progów. Jedyne, na co warto uważać, to pojedyncze powalone drzewa w korycie.</p>
+      <p>Dzięki temu spływ świetnie sprawdzi się zarówno dla początkujących, jak i dla rodzin z dziećmi, które szukają kontaktu z prawdziwie dziką przyrodą bez ekstremalnych wyzwań.</p>
+    </div>
+
+    <div class="tblok tblok--oliwka odslon">
+      <h2>Kiedy jechać</h2>
+      <p>Najlepszy czas na spływ to wiosna i wczesne lato, kiedy łąki kwitną, a szanse na spotkanie bobra czy wydry są największe, zwłaszcza o świcie lub o zmierzchu.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ MAPA TRASY ============================ -->
+<section class="tsekcja tsekcja--dol" aria-label="Mapa trasy">
+  <figure class="tmapa odslon">
+    <div class="mapa-ramka">
+      <div id="mapa" data-trasa="r3" role="img"
+           aria-label="Mapa trasy Nielisz do Tarnogóry na rzece Wieprz"></div>
+    </div>
+    <figcaption>Przebieg trasy: Nielisz → Tarnogóra, 23 km z biegiem Wieprza.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="tcta">
+  <div class="tcta__wnetrze">
+    <div class="tcta__tekst">
+      <h2>Przywozimy kajaki nad wodę</h2>
+      <p>Podstawiamy sprzęt w Nieliszu i odbieramy w Tarnogórze, więc nie musisz kombinować z transportem.</p>
+    </div>
+    <div class="tcta__przyciski">
+      <a href="index.html#kontakt" class="przycisk przycisk--pelny">Zarezerwuj spływ</a>
+      <a href="index.html#trasy" class="przycisk przycisk--obrys">Zobacz inne trasy</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ STOPKA ============================ -->
+<footer class="stopka">
+  <div class="kontener stopka__wnetrze">
+    <div class="stopka__marka">
+      Spływaj Małpa Wieprzem
+      <span>Mobilna wypożyczalnia kajaków · Tarnogóra nad Wieprzem</span>
+    </div>
+    <nav class="stopka__menu" aria-label="Nawigacja w stopce">
+      <a href="index.html#o-nas">O nas</a>
+      <a href="index.html#trasy">Trasy</a>
+      <a href="index.html#cennik">Cennik</a>
+      <a href="index.html#galeria">Galeria</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <div class="stopka__kontakt">
+      <a href="tel:+48665803548">665 803 548</a>
+      <a href="mailto:kontakt@splywajmalpa.pl">kontakt@splywajmalpa.pl</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script src="js/dane-tras.js"></script>
+<script src="js/nawigacja.js"></script>
+<script src="js/mapa-podstrony.js"></script>
+</body>
+</html>
