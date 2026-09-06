@@ -215,13 +215,6 @@
   clip-path:polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
 }
 
-.tobraz__ramka::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url('../assets/kajak.svg') center / 34% auto no-repeat;
-  opacity:.13;
-}
 
 .tobraz--kwadrat .tobraz__ramka{ aspect-ratio:1/1; }
 

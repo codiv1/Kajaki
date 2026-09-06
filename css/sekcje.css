@@ -864,20 +864,7 @@
   transition:transform .3s ease;
 }
 
-.kadr::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:url('../assets/kajak.svg');
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:38% auto;
-  opacity:.12;
-  transition:opacity .3s ease, transform .4s ease;
-}
-
 .kadr:hover{ transform:translateY(-3px); }
-.kadr:hover::before{ opacity:.2; transform:scale(1.06); }
 
 .kadr figcaption{
   position:relative;
